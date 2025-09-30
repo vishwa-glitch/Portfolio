@@ -1,0 +1,228 @@
+.aboutSection {
+  position: relative;
+  padding: 80px 0;
+  background: var(--gradient-dark);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.aboutContent {
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.textContent {
+  text-align: left;
+  background: rgba(17, 17, 17, 0.8);
+  padding: 2.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.intro {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.highlight {
+  font-weight: 700;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #a855f7; /* fallback color for browsers that don't support background-clip */
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+}
+
+.cta {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.feedbackCard {
+  background: rgba(17, 17, 17, 0.9);
+  border-radius: 20px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feedbackCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.feedbackContent {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem;
+}
+
+.feedbackHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.starRating {
+  font-size: 1.5rem;
+}
+
+.ratingText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.testimonial {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+  font-style: italic;
+  margin: 0 0 2rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--primary);
+}
+
+.achievements {
+  margin-bottom: 2rem;
+}
+
+.achievement {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.upworkButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #14a800, #00d4aa);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.upworkButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(20, 168, 0, 0.3);
+  background: linear-gradient(135deg, #0f8f00, #00b894);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .textContent {
+    text-align: center;
+  }
+  
+  .feedbackCard {
+    margin-top: 2rem;
+  }
+  
+  .feedbackContent {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 60px 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .cta {
+    font-size: 1.1rem;
+  }
+  
+  .textContent {
+    padding: 1.5rem;
+  }
+  
+  .feedbackContent {
+    padding: 1.5rem;
+  }
+  
+  .testimonial {
+    font-size: 1rem;
+  }
+  
+  .upworkButton {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}

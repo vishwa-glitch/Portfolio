@@ -1,0 +1,253 @@
+.skills {
+  background: var(--section-background);
+  position: relative;
+  overflow: visible;
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--accent-blue-transparent) 0%,
+    transparent 50%
+  );
+  opacity: 0.03;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--subtitle-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tree Diagram Styles */
+.skillTree {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.treeLevel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 1rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.skillNode {
+  opacity: 0;
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.nodeContent {
+  background: var(--card-background);
+  border: 2px solid var(--accent-green);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  position: relative;
+}
+
+.nodeContent:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px var(--card-shadow);
+  border-color: var(--accent-blue);
+  background: linear-gradient(135deg, 
+    rgba(0, 212, 170, 0.05), 
+    rgba(0, 102, 204, 0.05)
+  );
+}
+
+.nodeName {
+  font-weight: 600;
+  color: var(--heading-color);
+  font-size: 1rem;
+}
+
+.nodeIcon {
+  font-size: 1.5rem;
+  color: var(--accent-green);
+  display: flex;
+  align-items: center;
+}
+
+/* Root node special styling */
+.treeLevel:first-child .nodeContent {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+.treeLevel:first-child .nodeName {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Category level styling */
+.branchContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.branchContainer .nodeContent {
+  background: linear-gradient(135deg, 
+    rgba(0, 212, 170, 0.1), 
+    rgba(0, 102, 204, 0.1)
+  );
+  border-width: 2px;
+  font-weight: 600;
+}
+
+/* Connectors */
+.treeConnector {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontalLine {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--accent-green), 
+    var(--accent-blue),
+    var(--accent-green),
+    transparent
+  );
+}
+
+.branchDown {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--accent-blue), var(--accent-green));
+  position: relative;
+}
+
+.verticalConnector {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--accent-blue), var(--accent-green));
+  margin-top: -2px;
+}
+
+/* Tech groups */
+.techGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.techGroup .nodeContent {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.techGroup .nodeIcon {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .treeLevel {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .techGroup {
+    min-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillTree {
+    padding: 1rem;
+  }
+  
+  .treeLevel {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .techGroup {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .nodeContent {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .horizontalLine {
+    display: none;
+  }
+  
+  .verticalConnector {
+    display: none;
+  }
+}
