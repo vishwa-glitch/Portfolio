@@ -158,13 +158,6 @@ This project is open source and available under the MIT License.
 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-## 👨‍💻 Author
-
-**Full Stack Developer**
-- GitHub: [@yourusername](https://github.com)
-- LinkedIn: [Your Name](https://linkedin.com)
-- Email: contact@example.com
-
 ## 🙏 Acknowledgments
 
 - React team for the amazing framework
