@@ -113,11 +113,25 @@ const ProjectsPage = () => {
                     <div className={styles.mobileScreenshotsContainer}>
                       <h3 className={styles.screenshotsTitle}>App Screenshots</h3>
                       <div className={styles.mobileScreenshots}>
-                        {project.mobileScreenshots && project.mobileScreenshots.map((screenshot, index) => (
-                          <div key={index} className={styles.mobileScreenshot}>
-                            <img src={screenshot} alt={`Screenshot ${index + 1}`} />
+                        {project.mobileScreenshots && project.mobileScreenshots.length > 0 ? (
+                          project.mobileScreenshots.map((screenshot, index) => (
+                            <div key={index} className={styles.mobileScreenshot}>
+                              <img 
+                                src={screenshot} 
+                                alt={`Screenshot ${index + 1}`}
+                                onError={(e) => {
+                                  e.target.style.display = 'none';
+                                  e.target.parentElement.style.background = '#222';
+                                  e.target.parentElement.innerHTML = '<div style="color: #666; text-align: center; padding: 20px;">Image not available</div>';
+                                }}
+                              />
+                            </div>
+                          ))
+                        ) : (
+                          <div style={{ color: '#888', textAlign: 'center', padding: '2rem' }}>
+                            App screenshots coming soon...
                           </div>
-                        ))}
+                        )}
                       </div>
                       <button
                         onClick={() => handleFlipCard(project.id)}

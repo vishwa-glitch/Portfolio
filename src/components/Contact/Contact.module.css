@@ -224,16 +224,170 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .contact {
+    padding: 3rem 0 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
   .contactContent {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding: 0 1rem;
   }
 
   .contactInfo {
-    padding: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .infoTitle {
+    font-size: 1.5rem;
+  }
+
+  .infoDescription {
+    font-size: 0.95rem;
+  }
+
+  .infoItems {
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .infoItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .infoIcon {
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+
+  .socialLinks {
+    padding-top: 1.5rem;
+  }
+
+  .socialLinks h4 {
+    font-size: 1rem;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  .socialIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
 
   .contactForm {
     padding: 1.5rem;
+  }
+
+  .formGroup label {
+    font-size: 0.9rem;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .formGroup textarea {
+    min-height: 100px;
+  }
+
+  .submitButton {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .buttonIcon {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .contactContent {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .contactInfo {
+    padding: 0.5rem;
+  }
+
+  .infoTitle {
+    font-size: 1.3rem;
+  }
+
+  .infoDescription {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .infoItems {
+    gap: 1rem;
+  }
+
+  .infoItem h4 {
+    font-size: 0.85rem;
+  }
+
+  .infoItem a,
+  .infoItem span {
+    font-size: 0.9rem;
+  }
+
+  .socialIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .contactForm {
+    padding: 1.25rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1.25rem;
+  }
+
+  .formGroup label {
+    font-size: 0.85rem;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
   }
 }

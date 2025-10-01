@@ -281,15 +281,37 @@
 @media (max-width: 768px) {
   .hero {
     padding: 0 1rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .content {
+    padding-top: 4rem; /* Account for fixed navbar */
+  }
+
+  .nameTitle {
+    font-size: clamp(2rem, 7vw, 3rem);
+    margin-bottom: 1rem;
   }
 
   .roleContainer {
-    min-height: 100px;
-    gap: 0.3rem;
+    min-height: 70px;
+    margin-bottom: 1.5rem;
   }
 
   .animatedRole {
-    height: 50px;
+    height: 60px;
+  }
+
+  .role {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 2rem;
+    padding: 0 1rem;
   }
 
   .buttons {
@@ -297,20 +319,82 @@
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+    gap: 1rem;
   }
 
   .ctaButton {
     width: 100%;
     justify-content: center;
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .buttonIcon {
+    font-size: 1.1rem;
+  }
+
+  .scrollIndicator {
+    bottom: 1.5rem;
+  }
+
+  .scrollIcon {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 0 0.75rem;
+  }
+
+  .nameTitle {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    margin-bottom: 0.75rem;
+  }
+
   .roleContainer {
-    min-height: 80px;
+    min-height: 60px;
+    margin-bottom: 1rem;
   }
   
   .animatedRole {
-    height: 40px;
+    height: 50px;
+  }
+
+  .role {
+    font-size: clamp(1.25rem, 7vw, 2rem);
+  }
+
+  .subtitle {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .buttons {
+    max-width: 280px;
+  }
+
+  .ctaButton {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .scrollIndicator {
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .nameTitle {
+    font-size: 1.5rem;
+  }
+
+  .role {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
   }
 }

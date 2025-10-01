@@ -325,13 +325,29 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .experience {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
   .experienceContainer {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding: 0 1rem;
   }
 
   .projectShowcase {
     order: 2;
+    max-width: 100%;
   }
 
   .experienceDetails {
@@ -342,9 +358,134 @@
     padding: 1.5rem;
   }
 
+  .role {
+    font-size: 1.3rem;
+  }
+
+  .company {
+    font-size: 1rem;
+  }
+
+  .period {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .achievementsTitle {
+    font-size: 1rem;
+  }
+
+  .achievementsList li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
   .iconWrapper {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
+  }
+
+  .techTag {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  /* Timeline adjustments for mobile */
+  .timeline {
+    padding: 1rem 0;
+  }
+
+  .timelineLine {
+    left: 30px;
+  }
+
+  .timelineItem {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .timelineItem.left,
+  .timelineItem.right {
+    left: 0;
+  }
+
+  .timelineIcon {
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .timelineItem.left .timelineIcon,
+  .timelineItem.right .timelineIcon {
+    left: 10px;
+    right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .experienceContainer {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .experienceCard {
+    padding: 1.25rem;
+  }
+
+  .role {
+    font-size: 1.2rem;
+  }
+
+  .company {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .achievementsList li {
+    font-size: 0.85rem;
+    padding-left: 1.5rem;
+  }
+
+  .iconWrapper {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .techTag {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .imageOverlay {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .overlayIcon {
+    font-size: 1.2rem;
   }
 }

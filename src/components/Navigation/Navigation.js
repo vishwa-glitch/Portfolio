@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import styles from './Navigation.module.css';
 
 const Navigation = ({ theme, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const navItems = [
     { path: '/', label: 'Home', sections: ['home', 'skills', 'contact'] },
@@ -20,8 +20,24 @@ const Navigation = ({ theme, toggleTheme }) => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
 
@@ -60,9 +76,13 @@ const Navigation = ({ theme, toggleTheme }) => {
           </button>
 
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              console.log('Mobile menu toggle clicked, current state:', isMobileMenuOpen);
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
             className={styles.mobileMenuToggle}
             aria-label="Toggle mobile menu"
+            type="button"
           >
             {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
@@ -70,21 +90,23 @@ const Navigation = ({ theme, toggleTheme }) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
-        {navItems.map(item => (
-          <Link
-            key={item.path}
-            to={item.path}
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            className={`${styles.mobileNavItem} ${location.pathname === item.path ? styles.active : ''}`}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </div>
+      {isMobile && (
+        <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
+          {navItems.map(item => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`${styles.mobileNavItem} ${location.pathname === item.path ? styles.active : ''}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

@@ -220,34 +220,140 @@
 }
 
 @media (max-width: 768px) {
+  .skills {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
   .skillTree {
     padding: 1rem;
+    max-width: 100%;
   }
   
   .treeLevel {
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .treeLevel:first-child .nodeContent {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .treeLevel:first-child .nodeName {
+    font-size: 1.1rem;
+  }
+
+  .branchContainer {
+    width: 100%;
+  }
+
+  .branchContainer .nodeContent {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
   }
   
   .techGroup {
     width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .techGroup .nodeContent {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.9rem;
+    justify-content: flex-start;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .techGroup .nodeIcon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .techGroup .nodeName {
+    font-size: 0.85rem;
+    line-height: 1.2;
   }
   
   .nodeContent {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .nodeIcon {
+    font-size: 1.3rem;
   }
   
-  .horizontalLine {
+  .horizontalLine,
+  .branchDown,
+  .verticalConnector,
+  .treeConnector {
     display: none;
   }
-  
-  .verticalConnector {
-    display: none;
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .skillTree {
+    padding: 0.5rem;
+  }
+
+  .treeLevel {
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .techGroup {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .techGroup .nodeContent {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .techGroup .nodeIcon {
+    font-size: 1rem;
+  }
+
+  .techGroup .nodeName {
+    font-size: 0.8rem;
+  }
+
+  .treeLevel:first-child .nodeContent {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .treeLevel:first-child .nodeName {
+    font-size: 1rem;
   }
 }
