@@ -50,7 +50,6 @@
   transition: all 0.3s ease;
   transform-style: preserve-3d;
   perspective: 1000px;
-  width: 100%;
 }
 
 .flipCard {
@@ -70,7 +69,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  min-height: 400px;
   backface-visibility: hidden;
   transition: transform 0.6s;
   padding: 2rem;
@@ -127,7 +125,6 @@
   z-index: 2;
   min-width: 0;
   flex: 1.2;
-  width: 100%;
 }
 
 .projectHeader {
@@ -270,8 +267,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 0;
-  width: 100%;
 }
 
 .projectImage {
@@ -282,9 +277,6 @@
   background: #1a1a1a;
   border: 1px solid #222;
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .projectImage img {
@@ -293,8 +285,6 @@
   object-fit: contain;
   background: #0a0a0a;
   transition: transform 0.3s ease;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .projectImage:hover {
@@ -313,7 +303,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2rem;
 }
 
@@ -331,14 +321,10 @@
   align-items: center;
   flex: 1;
   width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  padding: 1rem 0;
 }
 
 .mobileScreenshot {
-  flex: 0 0 auto;
-  width: 180px;
+  flex: 1;
   max-width: 180px;
   aspect-ratio: 9/16;
   border-radius: 12px;
@@ -405,27 +391,13 @@
     padding: 2rem;
   }
   
-  .projectLeft {
-    flex: 1;
-    width: 100%;
-  }
-
   .projectRight {
     width: 100%;
     max-width: none;
-    flex: none;
   }
   
   .projectImage {
     aspect-ratio: 16/9;
-    width: 100%;
-    max-height: 200px;
-  }
-
-  .projectRight {
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
   
   .mobileScreenshots {
@@ -469,32 +441,11 @@
     min-height: auto;
   }
 
-  .flipCard {
-    min-height: 450px;
-  }
-
-  .projectCard.flipped .cardFront {
-    display: none;
-  }
-
-  .projectCard.flipped .cardBack {
-    position: relative;
-    transform: none;
-    display: flex;
-  }
-
   .cardFront,
   .cardBack {
     padding: 1.5rem;
     gap: 1.5rem;
     position: relative;
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .cardBack {
-    height: 100%;
-    min-height: 450px;
   }
   
   .projectTitle {
@@ -530,42 +481,15 @@
     font-size: 0.8rem;
   }
   
-  .mobileScreenshotsContainer {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-  }
-
-  .screenshotsTitle {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-  }
-
   .mobileScreenshots {
-    flex-direction: row;
-    gap: 0.75rem;
-    overflow-x: auto;
-    padding: 0.5rem 0;
-    justify-content: flex-start;
-    align-items: stretch;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+    flex-direction: column;
+    gap: 1rem;
   }
   
   .mobileScreenshot {
-    flex: 0 0 auto;
-    width: 140px;
-    max-width: none;
-    margin: 0;
-    scroll-snap-align: center;
-    aspect-ratio: 9/16;
-  }
-
-  .mobileScreenshot img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+    max-width: 250px;
+    margin: 0 auto;
   }
 
   .seeMoreContainer {
@@ -581,19 +505,6 @@
 @media (max-width: 480px) {
   .projectsContainer {
     padding: 80px 0 40px;
-  }
-
-  .flipCard {
-    min-height: 500px;
-  }
-
-  .projectCard.flipped {
-    min-height: 500px;
-  }
-
-  .cardBack {
-    min-height: 500px;
-    padding: 1rem;
   }
 
   .content {
@@ -665,39 +576,8 @@
     margin-bottom: 1.5rem;
   }
 
-  .mobileScreenshotsContainer {
-    padding: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .screenshotsTitle {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .mobileScreenshots {
-    flex: 1;
-    display: flex;
-    gap: 0.5rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
-
   .mobileScreenshot {
-    width: 120px;
-    height: auto;
-    aspect-ratio: 9/16;
-    flex-shrink: 0;
-  }
-
-  .mobileScreenshot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 1px solid #333;
+    max-width: 200px;
   }
 
   .backButton {
